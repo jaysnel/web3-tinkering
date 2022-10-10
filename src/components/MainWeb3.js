@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { ethers } from "ethers";
 import WalletInstalled from "./WalletInstalled"
 import Button from './Button';
+import abi from '../utils/Web3TinkeringContract.json'
 
 export default function MainWeb3() {
   const [walletInstalled, setWalletInstalled] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [isLoadingText, setIsLoadingText] = useState('We don\'t detect a wallet in this browser.')
+  const contractAddress = '0x0f93004F892D0539F2672c1bB12BF6AbB6e0Ae4E'
+  const contractABI = abi.abi
   const checkForWallet = async () => {
       setIsLoadingText('Checking for wallet...')
       
@@ -21,6 +24,13 @@ export default function MainWeb3() {
       const signer = provider.getSigner()
       console.log('Signer: ', signer)
       signer ? setWalletInstalled(true) : setWalletInstalled(false)
+
+      const web3TinkeringContract = new ethers.Contract(contractAddress, contractABI, signer)
+      console.log('web3TinkeringContract', web3TinkeringContract)
+      // await web3TinkeringContract.update('THIS IS A SECOND UPDATE')
+      const userMessage = await web3TinkeringContract.message()
+      console.log('UserMessage: ', userMessage)
+      
       // code seems to stop here if 
       // no wallet is installed and 
       // nothing further will run...

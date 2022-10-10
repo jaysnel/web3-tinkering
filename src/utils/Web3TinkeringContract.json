@@ -1,0 +1,142 @@
+{
+    "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "initMessage",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "oldStr",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "newStr",
+              "type": "string"
+            }
+          ],
+          "name": "UpdatedMessages",
+          "type": "event"
+        },
+        {
+          "inputs": [],
+          "name": "firstName",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "_name",
+              "type": "string"
+            }
+          ],
+          "name": "getMessage",
+          "outputs": [],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getMyInfo",
+          "outputs": [
+            {
+              "components": [
+                {
+                  "internalType": "string[]",
+                  "name": "firstName",
+                  "type": "string[]"
+                },
+                {
+                  "internalType": "string[]",
+                  "name": "lastname",
+                  "type": "string[]"
+                }
+              ],
+              "internalType": "struct Web3Tinkering.MyData[]",
+              "name": "",
+              "type": "tuple[]"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "lastName",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "message",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string[]",
+              "name": "_firstName",
+              "type": "string[]"
+            },
+            {
+              "internalType": "string[]",
+              "name": "_lastName",
+              "type": "string[]"
+            }
+          ],
+          "name": "setMyInfo",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "newMessage",
+              "type": "string"
+            }
+          ],
+          "name": "update",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ]
+}
